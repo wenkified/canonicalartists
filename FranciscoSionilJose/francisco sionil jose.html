@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <title>Francisco Sionil Jose</title>
+        <style>
+            body{
+                background-color: #345c72;
+                color: white;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+            }
+            table {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                border-collapse: collapse;
+                
+                text-align: left;
+                position: relative;
+            }
+
+            .button4 {
+                background-color: white;
+                color: black;
+                border: 2px solid #555555;
+            }
+
+            .button4:hover {
+                background-color: rgb(91, 125, 230);
+                color: white;
+            }
+            .button {
+                background-color: royalblue;
+                border: none;
+                color: white;
+                padding:10px 25px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 25px;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                transition-duration: 0.5s;
+                cursor: pointer;
+                border-radius: 25px 25px 25px 25px;
+                margin-bottom: -25px;
+                margin-left: 5px;
+                margin-top: 10px;
+                letter-spacing: 2px;
+            }
+            footer{
+                height: 0;
+            }
+            .main{
+                margin-left: 50px;
+                margin-right: 50px;
+                background-color: #2a2e30;
+                margin-top: 50px;
+            }
+            #cont{
+                margin-left: 50px;
+                margin-top: 25px;
+                margin-bottom: 50px;
+                margin-right: 50px;
+            }
+            #myBtn {
+  display: none;
+  position: fixed;
+  bottom: 45px;
+  right: 45px;
+  z-index: 99;
+  font-size: 25px;
+  border: none;
+  outline: none;
+  background-color: royalblue;
+  color: white;
+  cursor: pointer;
+  padding: 25px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #1d1f20;
+}
+        </style></head>
+    <body>
+        <div class="main">
+            <a href="../authors.html"><button class="button button4" >Return</button></a>
+            <button onclick="topFunction()" id="myBtn" title="Go to top"><b>Top</b></button>
+            <br><br>
+            <div id="cont">
+
+            <table style="width: 100%;">
+                <tr>
+                    <td style="width: 400px;"><img style="border-radius: 50%;" src="data:image/jpeg;base64,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" width="350px" height="350px"></td>
+                    <td style="width: 2000px;"><h1 style="margin-bottom: -15px;" >Francisco Sionil José </h1>
+                        <h3 style="font-style: italic;">Conferred on 2001</h3>
+                        <b4>Born on December 3, 1924 <br>
+                            Died on August 21, 2011 at the age of 92 where the Aguino administration expressed its grief over her death.
+                            <br>Was a Filipino <em>writer</em>  who was one of the most widely read in the English language.<br>
+                            His  novels and short stories depict the social underpinnings of class struggles and colonialism in Filipino society.</b4></td>
+                  </tr>
+    
+              </table><br><hr>
+           <h2><em style="text-decoration: underline;">Biography</em></h2> 
+            <p>After WWII, José enrolled at the University of Santo Tomas, but dropped out to pursue writing and journalism in Manila. In the years afterwards, he has edited numerous literary and journalistic magazines, launched a publishing firm, and established the Philippine section of PEN, an international writers' organization. José got various honors for his efforts. His most popular novel, The Pretenders, tells the narrative of one man's separation from his impoverished upbringing and the decadence of his wife's wealthy family.<br><br>Sionil José also operated Solidaridad Bookshop on Padre Faura Street in Manila's Ermita neighborhood. The bookshop specializes in hard-to-find titles and Filipiniana reading materials. It is said to be a favored hangout for many local writers.
+
+                On September 12, 2011, he wrote "Why we are shallow" in his regular column, Hindsight, in The Philippine STAR, blaming the decline of Filipino intellectual and cultural standards on a variety of modern amenities, including media, the education system—particularly the loss of emphasis on classic literature and the study of Greek and Latin—and the abundance and immediacy of information on the Internet.</p>
+            <hr>
+            <h2><em>Achievments and Awards</em></h2>
+            <ul>
+                <li><i>Chevalier dans l'Ordre des Arts et Lettres</i> (2000)</li>
+                <li><i>Ramon Magsaysay Award for Journalism, Literature and Creative Communication Arts</i> (1980)</li>
+                <li><i>City of Manila Award for Literature</i> (1979)</li>
+                <li><i>Carlos Palanca Memorial Award for Literature</i> (1959, 1979, 1980, 1981)</li>
+            </ul>
+<br>
+           <hr><br><center><h2><em>BIBLIOGRAPHY</em></h2>
+            <table width="100%" style="text-align: center;">
+                <tr>
+                    <td>Po-on (1984)</td>
+                    <td>The Pretenders (1962)</td>
+                    <td>My Brother, My Executioner (1973)</td>
+                    <td>Mass (December 31, 1974)</td>
+                    <td>Tree (1978)</td>
+                </tr>
+                <tr>
+                    <td>Gagamba (The Spider Man) (1991)</td>
+                    <td>Viajero (1993)</td>
+                    <td>Sin (1994)</td>
+                    <td>Ben Singkol (2001)</td>
+                    <td>Ermita (1988) </td>
+                </tr>
+                <tr>
+                    <td>Vibora! (2007)</td>
+                    <td>Sherds (2008)</td>
+                    <td>Muse and Balikbayan: Two Plays (2008)</td>
+                    <td>Short Stories (with Introduction and Teaching Guide by Thelma B. Kintanar) (2008)</td>
+                    <td>The Feet of Juan Bacnang (2011)</td>
+                </tr>
+                <tr>
+                    <td>The God Stealer and Other Stories (2001)</td>
+                    <td>Puppy Love and Thirteen Short Stories (March 15, 1998)</td>
+                    <td>Olvidon and Other Stories (1988) </td>
+                    <td>Waywaya: Eleven Filipino Short Stories (1980)</td>
+                    <td>Short Story International (SSI): Tales by the World's Great Contemporary Writers (Unabridged, Volume 13, Number 75) (co-author, 1989)</td>
+                </tr>
+            </table></center><br><hr>
+    
+    
+                <h1 style="text-align: center">My Brother, My Executioner</h1><center>
+                <p style="text-align: center;width: 50%;">He returned to Rosales. He came home together with Trining, his female cousin, who
+                    studies in the convent. In order for the Asperris to preserve their wealth, Luis married Trining.
+                    After sometime, she got pregnant. But in manila, Luis also had an affair with his manager's
+                    daughter - Ester - which is also Trining's best friend. But because they quarreled one night,
+                    Ester disappeared and was found out to be dead. He then found out from his mother that his
+                    half-brother Victor became the commander of Hukbalahap (hukbong bayan laban sa mga
+                    hapon) which is against rich people and feudal landowners.
+</p></center>
+    <br><hr><br>
+    
+    
+    
+                    <h2 id="summary">Summary by: Arvin John Senocbit</h2><img style="border-radius: 50%;" src="../senocbit.jpg" width="200px" height="200px">
+                    <div class="content" style="z-index: 1100px; margin-top: -250px;"><h1 style="text-align: center">My Brother, My Executioner</h1>
+                        <ol type="a" style="margin-left: 250px;">
+                            <li>What is/are the theme/s of the literary piece?</li>
+                            <p style="margin-left: 45px;margin-top: 1px;">The concept of My Brother, My Executioner is on a deeper symbolic battle between two brothers, their radically different and separated lives, and their divergent ideals of justice and dishonesty that are centered on their society and the people they care about. It addresses issues such as politics, family, equality, love, poverty and more so that we may be able to study or gain knowledge about them.</p>
+                            <li>What/Who are the inspirations in writing the literary piece?</li>
+                            <p style="margin-left: 45px;margin-top: 1px;">Hukbalahaps and various social positions serve as the novel's influences because the plot centers on two brothers who have taken very different paths in life.</p>
+                            <li>How did the literary piece contribute to the development of literature in the Philippines?</li>
+                            <p style="margin-left: 45px;margin-top: 1px;">There may be something for us to learn from the novel's treatment of topics like politics, family, equality, love, poverty, and more. The novel also taught us about different perspectives on life. Francisco Sionil Jose's works primarily address corruption, poverty, and Filipino identity; as a result, Filipinos who lack the ability to speak for themselves are given a voice to speak their rights and inform the government of the situations they are in. The story is realistic because it is based on what was happening at the time.</p>
+                            <li>What are your reactions to the content of the literary piece? Give your interpretation of it.</li>
+                            <p style="margin-left: 45px;margin-top: 1px;">The political beliefs of our society that have been shaped by this book. The novel also teaches us a lesson to Fight for what you believe in and be prepared to face all the hardships that may arise along the path. It gave us knowledge to comprehend fully and broadly the role of the youth in this present society.</p>
+            </div><br><br><hr><hr><br><br>
+        </div>
+    </body>
+    <script>
+        // Get the button
+        let mybutton = document.getElementById("myBtn");
+        
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+        
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+        </script>    
+</html>

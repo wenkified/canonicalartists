@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <title>Edith Tiempo</title>
+        <style>
+            body{
+                background-color: #345c72;
+                color: white;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+            }
+            table {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                border-collapse: collapse;
+                width: 65%;
+                text-align: left;
+                position: relative;
+            }
+
+            .button4 {
+                background-color: white;
+                color: black;
+                border: 2px solid #555555;
+            }
+
+            .button4:hover {
+                background-color: rgb(91, 125, 230);
+                color: white;
+            }
+            .button {
+                background-color: royalblue;
+                border: none;
+                color: white;
+                padding:10px 25px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 25px;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                transition-duration: 0.5s;
+                cursor: pointer;
+                border-radius: 25px 25px 25px 25px;
+                margin-bottom: -25px;
+                margin-left: 5px;
+                margin-top: 10px;
+                letter-spacing: 2px;
+            }
+            footer{
+                height: 0;
+            }
+            .main{
+                margin-left: 50px;
+                margin-right: 50px;
+                background-color: #2a2e30;
+                margin-top: 50px;
+            }
+            #cont{
+                margin-left: 50px;
+                margin-top: 25px;
+                margin-bottom: 50px;
+                margin-right: 50px;
+            }
+            #myBtn {
+  display: none;
+  position: fixed;
+  bottom: 45px;
+  right: 45px;
+  z-index: 99;
+  font-size: 25px;
+  border: none;
+  outline: none;
+  background-color: royalblue;
+  color: white;
+  cursor: pointer;
+  padding: 25px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #1d1f20;
+}
+        </style></head>
+    <body>
+        <div class="main">
+            <a href="../authors.html"><button class="button button4" >Return</button></a>
+            <button onclick="topFunction()" id="myBtn" title="Go to top"><b>Top</b></button>
+            <br><br>
+            <div id="cont">
+
+            <table style="width: 100%;">
+                <tr>
+                    <td style="width: 400px;"><img style="border-radius: 50%;" src="data:image/jpeg;base64,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" width="350px" height="350px"></td>
+                    <td style="width: 2000px;"><h1 style="margin-bottom: -15px;" >Edith Cutaran Lopez-Tiempo</h1>
+                        <h3 style="font-style: italic;">Also known as Edith Tiempo</h3>
+                        <b4>Born on April 22, 1919 in Bayombong, Nueva Vizcaya<br>
+                            Died on August 21, 2011 at the age of 92 where the Aguino administration expressed its grief over her death.
+                            <br>Was a Filipino <em>poet, fiction writer, teacher and literary critic</em> in the English language<br>
+                            Conferred the National Artist Award by Order of National Artists of the Philippines in 1999</b4></td>
+                  </tr>
+    
+              </table><br><hr>
+           <h2><em style="text-decoration: underline;">Biography</em></h2> 
+            <p>Tiempo was born in the town of Bayombong, Nueva Vizcaya. Tiempo's poetry are elaborate verbal transfigurations of key experiences, as demonstrated in two of her widely anthologized pieces, "Halaman" and "Bonsai." Tiempo is also a morally profound fictionist. Her style has been described as "descriptive but unburdened by rigorous detailing," and she represents an influential tradition in Philippine English literature. They organized and led the Silliman National Authors Workshop in Dumaguete City (in 1962) with her late husband, writer and critic Edilberto K. Tiempo, which produced some of the Philippines' best writers.</p>
+            <hr>
+            <h2><em>Achievments and Awards</em></h2>
+            <ul>
+                <li><i>National Artist Award for Literature</i> (1999)</li>
+                <li><i>Philippines Free Press Short Story Contest</i> (1949)</li>
+                <li><i>Cultural Center of the Philippines</i> (1979, First Prize in Novel), Awardee for Literature (1955)</li>
+                <li>Carlos Palanca Memorial Awards for Literature</li>
+            </ul>
+<br>
+           <hr><br><center><h2><em>BIBLIOGRAPHY</em></h2><table width="100%">
+                <tr>
+                    <td>A Blade of fern (1978)</td>
+                    <td>His Native Coast (1979)</td>
+                    <td>The Alien Corn (1992)</td>
+                </tr>
+                <tr>
+                    <td>One, Tilting Leaves (1995)</td>
+                    <td>The Builder (2004)</td>
+                    <td>The Jumong (2006)</td>
+                </tr>
+                <tr>
+                    <td>Abide, Joshua, and Other Stories (1964)</td>
+                    <td>The Tracks of Babylon and Other Poems (1966)</td>
+                    <td>The Charmer's Box and Other Poet (1993)</td>
+                </tr>
+                <tr>
+                    <td>Marginal Annotations and Other Poems</td>
+                    <td>Commend Contend. Beyond Extensions (2010)</td>
+                </tr>
+            </table></center><br><hr>
+    
+    
+                <h1 style="text-align: center">The Tracks of Babylon</h1>
+                <p style="text-align: center;">
+                    The hand grown tentative fumbles the pen.<br>
+                    He had been lost on the runic slopes and peaks,<br>
+                     He had whittled at the wedges strung out fence-like,<br>
+                     He had tangled with the hooks and whorls <br>
+                     Whipped into mysteries involuted <br>
+                     And potent as any coiled up in the grass.<br><br>
+                     Bull and plowman, sandaled queen and lion,<br>
+                     Brooding of eyes, all set in profiled <br>
+                     Stance and all dichotomized,<br>
+                     Lift from the crackling sheet their possibility. <br>
+                     In the leaning fixed bodies <br>
+                     Clammy-Hand fumbles for the furnace-
+                     <br>Hot heart, for the kinetic core <br>
+                     Yellowly burning.<br><br>
+                     Outside, the wind-blown rice harvest strains <br>
+                     For this old man nursing a cold limb. <br>
+                     The slavering maggots of his memory assault him: <br>
+                     When tiredness, like a blister, was mere fretting, <br>
+                     And pain left a curious token unaware, <br>
+                     A scab for wisdom to pick over.<br><br>
+                    If this hand seared and seared by terrible beauty, <br>
+                    That bared the buried Babylon to his eyes, <br>
+                    Could menace the coiled destroyer in the rice,<br>
+                    If it could swing in hooks and whorls <br>
+                    Despising (or missing) the dull stance of protection, <br>
+                    Then he might wear shiny both switch and pen. <br>
+                    Large sun-shapes sprawl across the grains, <br>
+                    But it's his dark and tilted vision <br>
+                    Shuts him in, man fumbling the dropped pen, <br>
+                    Peering, tessellating a much-tracked Babylon.</p></center>
+    <br><hr><br>
+    
+    
+    
+                    <h2 id="summary">Summary by: Lady Angeline Sempuego</h2><img style="border-radius: 50%;" src="../sempuego.jpg" width="200px" height="200px">
+                    <div class="content" style="z-index: 1100px; margin-top: -250px;"><h1 style="text-align: center">The Tracks of Babylon</h1>
+                        <ol type="a" style="margin-left: 250px;">
+                            <li>What is/are the theme/s of the literary piece?</li>
+                            <p style="margin-left: 45px;margin-top: 1px;">The track of Babylon. Basically, this poem reflects on love, a love that two individual shares and it also talks about isolation of two people from each other to sum it up it’s about young ignorant love of two person. 
+                            </p>
+                            <li>What/Who are the inspirations in writing the literary piece?</li>
+                            <p style="margin-left: 45px;margin-top: 1px;">This specific literary piece’s inspiration is the youth since it shows how young people tends to fall for one another, yet they are still so immature and ignorant about it this literary piece shows how emptiness feels like. 
+                            </p>
+                            <li>How did the literary piece contribute to the development of literature in the Philippines?</li>
+                            <p style="margin-left: 45px;margin-top: 1px;">Tiempo was ahead of her time. Quoting the esteemed literary critic Isagani R. Cruz, Hidalgo reiterated Tiempo’s theoria and praxis of “paying attention to contemporary social problems as a strong material for the literary work, and evolving structures and symbolisms for the exploration of those contemporary problems.” Then she demonstrated how these two stories belie the idea held by some critics and readers about Tiempo’s being mainly an advocate for New Criticism. 
+                            </p>
+                            <li>What are your reactions to the content of the literary piece? Give your interpretation of it.</li>
+                            <p style="margin-left: 45px;margin-top: 1px;">After reading the literary piece the track of Babylon, it made me realize growing up so fast and rushing things can be the cause of your regrets in the future. It also speaks about how an old man, a traveler, as he goes through his last years. It discusses the hardships of being at an old age and reminiscing the life the old man once lived. Dead years represent the grueling life he now has, and the sorrow he is feeling at the moment.
+                            </p>
+            </div><br><br><hr><hr><br><br>
+        </div>
+    </body>
+    <script>
+        // Get the button
+        let mybutton = document.getElementById("myBtn");
+        
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+        
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+        </script>    
+</html>

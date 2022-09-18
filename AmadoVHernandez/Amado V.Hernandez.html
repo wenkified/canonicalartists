@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <title>Amado V.Hernandez</title>
+        <style>
+            body{
+                background-color: #345c72;
+                color: white;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+            }
+            table {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                border-collapse: collapse;
+                
+                text-align: left;
+                position: relative;
+            }
+
+            .button4 {
+                background-color: white;
+                color: black;
+                border: 2px solid #555555;
+            }
+
+            .button4:hover {
+                background-color: rgb(91, 125, 230);
+                color: white;
+            }
+            .button {
+                background-color: royalblue;
+                border: none;
+                color: white;
+                padding:10px 25px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 25px;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                transition-duration: 0.5s;
+                cursor: pointer;
+                border-radius: 25px 25px 25px 25px;
+                margin-bottom: -25px;
+                margin-left: 5px;
+                margin-top: 10px;
+                letter-spacing: 2px;
+            }
+            footer{
+                height: 0;
+            }
+            .main{
+                margin-left: 50px;
+                margin-right: 50px;
+                background-color: #2a2e30;
+                margin-top: 50px;
+            }
+            #cont{
+                margin-left: 50px;
+                margin-top: 25px;
+                margin-bottom: 50px;
+                margin-right: 50px;
+            }
+            #myBtn {
+  display: none;
+  position: fixed;
+  bottom: 45px;
+  right: 45px;
+  z-index: 99;
+  font-size: 25px;
+  border: none;
+  outline: none;
+  background-color: royalblue;
+  color: white;
+  cursor: pointer;
+  padding: 25px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #1d1f20;
+}
+        </style></head>
+    <body>
+        <div class="main">
+            <a href="../authors.html"><button class="button button4" >Return</button></a>
+            <button onclick="topFunction()" id="myBtn" title="Go to top"><b>Top</b></button>
+            <br><br>
+            <div id="cont">
+
+            <table style="width: 100%;">
+                <tr>
+                    <td style="width: 400px;"><img style="border-radius: 50%;" src="data:image/jpeg;base64,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" width="350px" height="350px"></td>
+                    <td style="width: 2000px;"><h1 style="margin-bottom: -15px;" >Amado Vera Hernandez </h1>
+                        <h3 style="font-style: italic;">Conferred on 1973</h3>
+                        <b4>Born on September 13, 1903 in Tondo, Manila <br>
+                            Died on August 21, 2011 at the age of 92 where the Aguino administration expressed its grief over her death.
+                            <br>Was a Filipino <em>writer and labor leader</em> who was known for his criticism of social injustices in the Philippines and was later imprisoned for his involvement in the communist movement. He was the central figure in a landmark legal case that took 13 years to settle.</b4></td>
+                  </tr>
+    
+              </table><br><hr>
+           <h2><em style="text-decoration: underline;">Biography</em></h2> 
+            <p>He began writing in Tagalog for the publication Watawat(Flag) while still a teenager. He would eventually write a column for the Tagalog journal Pagkakaisa (Unity) and, at the age of 28, become the youngest patnugot (editor) of Mabuhay (Long Live).
+                His works drew the attention of Tagalog literati, and several of his stories and poetry appeared in anthologies such as Clodualdo del Mundo's Parolang Ginto and Alejandro Abadilla's Talaang Bughaw.
+                Hernandez joined the literary club Aklatang Bayan in 1922, at the age of 19, along with notable Tagalog writers Lope K. Santos and Jose Corazon de Jesus.
+                He married the Filipino actress Atang de la Rama in 1932. Both would go on to be acknowledged as National Artists.<br><BR>When the Japanese invaded the Philippines in 1941, Hernandez joined the resistance movement. Throughout the Second World War, he worked as an intelligence operative for the guerilla group Marking and Anderson, whose operations included Bulacan and the Sierra Madre mountains.Hernandez met guerillas of the Hukbo ng Bayan Laban sa Hapon (Hukbalahap), which was created by Luis Taruc and other communist ideologues and was continued by Philippine Commonwealth troops who arrived in Bulacan. This is when Hernandez is said to have formed sympathy, if not belief, in the communist movement.<br><br>After the war, President Sergio Osmeña appointed him councilor of Manila during the reconstruction of the war-devastated city. He also became president of the defunct Philippine Newspaper Guild in coordination with its editor in chief, Narjeey Larasa. During this time he published articles on landlordism, collaboration with the Japanese, the reintroduction of American armed forces and the execution of guerilla leaders.But his most significant activities after the war involved organizing labor unions across the country through the labor federation Congress of Labor Organizations (CLO). Influenced by the philosophy of Marx he advocated revolution as a means of change. On May 5, 1947, he led the biggest labor strike to hit Manila at that time. The following year, he became president of the CLO and led another massive labor demonstration on May 1948. In 1950, the Philippine military started a crackdown against the communist movement, which was had sparked open rebellion in some areas on Luzon island, and the CLO headquarters was raided on January 20, 1951. Hernandez was arrested on January 1951 along with several trade union leaders in Manila on the suspicion that he was among the leaders of the rebellion.<br><br>After five years of imprisonment, the Supreme Court allowed Hernandez to post bail on June 20, 1956. He then resumed his journalistic career and wrote a column for the Tagalog tabloid Taliba. He would later be conferred awards in prestigious literary contests, like the Commonwealth Literary Contest (twice), Don Carlos Palanca Memorial Awards (four times) and journalism awards given by the National Press Club of the Philippines (four times).On May 30, 1964, the Supreme Court acquitted Hernandez in a decision that would be a landmark in Philippine jurisprudence. The case People of the Philippines vs. Amado V. Hernandez is now a standard case study in Philippine law schoolsHernandez continued to write and teach after his acquittal. He was teaching at the University of the Philippines when he died on March 24, 1970. The University of the Philippines posthumously conferred on him the degree of Doctor of Humanities honoris causa on March 14, 1972. The Ateneo de Manila University awarded him its first Tanglaw ng Lahi award. He was posthumously honored as National Artist for Literature in 1973. Together with poet José García Villa, Hernández was the first to receive the title in literature.
+        
+            
+            </p>
+            <hr>
+            <h2><em>Achievments and Awards</em></h2>
+            <ul>
+                <li><i>Commonwealth Literary Contest </i>(1938)</li>
+                <li><i>Palanca Awards</i> (1958)</li>
+                <li><i>Palanca Awards</i> (1959)</li>
+                <li><i>Republic Cultural Heritage Award	</i> (1962)</li>
+                <li><i>City of Manila</i> (1964)</li>
+                <li><i>Ateneo de Manila University</i> (1970)</li>
+            </ul>
+<br>
+           <hr><br><center><h2><em>BIBLIOGRAPHY</em></h2>
+            <table width="100%" style="text-align: center;">
+                <tr>
+                    <td>Mga Ibong Mandaragit </td>
+                    <td>Luha Ng Buwaya</td>
+                    <td>Pili sa Pinili</td>
+                    <td>Isang Dipang Langit (An Arm-Stretch of Sky)</td>
+                </tr>
+                <tr>
+                    <td>Panata sa Kalayaan (Pledge to Freedom)</td>
+                    <td>Ang Mga Kayamanan ng Tao</td>
+                    <td>Ang Dalaw Kay Silaw</td>
+                    <td>Bartolina</td>
+                </tr>
+                <tr>
+                    <td>Kung Tuyo Na ang Luha Mo Aking Bayan (When Your Tears Have Dried, My Country)</td>
+                    <td>Bayang Malaya</td>
+                    <td>Ang Taong Kapos</td>
+                    <td>Bayani</td>
+                </tr>
+                <tr>
+                    <td>Sa Batang Walang Bagong Damit</td>
+                    <td>Isang Sining ng Pagbigkas</td>
+                    <td>Ang Panday</td>
+                    <td>Inang Wika</td>
+                </tr>
+                <tr>
+                    <td>Ang Tao</td>
+                    <td>Ang Aklasan</td>
+                    <td>Si Atang at ang Dulaan (Atang and the Theater)</td>
+                    <td>Si Jose Corazon de Jesus at ang Ating Panulaan (Jose Corazon de Jesus and Our Poetry)</td>
+                </tr>
+
+            </table></center><br><hr>
+    
+    
+                <h1 style="text-align: center">Mga Ibong Mandaragit</h1>
+                <center><p style="text-align: left; width: 70%; line-height: 2;">Nagkaroon ng sunog sa Hacienda Montero at ang itinurong mga may sala
+                    Ay mga magsasaka at naglagay ang mga civilian guards ng mga baril at ibang
+                    Dokumento sa mga bahay-bahay upang mapalabas na may binabalak na masama
+                    Ang mga magsasaka kaya’t pinaghuhuli sila. Matapos na mabugbog si Pastor sa
+                    Kulungan nang ayaw niyang amining totoong may mga armas sa kanilang bahay,
+                    Isinunod naman si Mang Tumas at isa pang magsasaka na ang kinahantungan ay
+                    Kamatayan nila at ang pagliyab ng damdamin ng mga magsasaka na pinamunuan
+                    Ni Danoy kasama ang mga taonglabas upang maghiganti at makuha ang Hacienda
+                    Montero, na dapat ay sa kanila mapunta. Dito’y nakita nila
+                    Mando, Danoy at iba pang natira na dapat nang simulan ang pagbabago, ang sama-
+                    Samang pagtuwid sa mga baluktot na prinsipyong kumakatig sa dambuhalang
+                    Mandaragit na walang habas sa pagsipsip sa dugo ng mga nangangamatay na mga
+                    Pilipino sa kanilang hangad ng wastong at pantay na pagtrato sa tao, maging
+                    Milyonaryo o isa lang obrero.
+</p></center>
+    <br><hr><br>
+    
+    
+    
+                    <h2 id="summary">Summary by: June Mar Mata</h2><img style="border-radius: 50%;" src="../senocbit.jpg" width="200px" height="200px">
+                    <div class="content" style="z-index: 1100px; margin-top: -250px;"><h1 style="text-align: center">Mga Ibong Mandaragit</h1>
+                        <ol type="a" style="margin-left: 250px;">
+                            <li>What is/are the theme/s of the literary piece?</li>
+                            <p style="margin-left: 45px;margin-top: 1px;">Neocolonial dependency and revolt in the Philippines</p>
+                            <li>What/Who are the inspirations in writing the literary piece?</li>
+                            <p style="margin-left: 45px;margin-top: 1px;">The novel reflects Hernandez’s experience as a guerrilla intelligence officer when the Philippines was
+                                under Japanese occupation from 1942 to 1945</p>
+                            <li>How did the literary piece contribute to the development of literature in the Philippines?</li>
+                            <p style="margin-left: 45px;margin-top: 1px;">The novel acts as a sequel to Jose Rizal’s historic Noli Me Tangere and El filibusterismo. The
+                                protagonist Mando Plaridel is tested by Tata Matyas, an old revolutionary, on his knowledge about Rizal
+                                and Rizal’s novels. Similar to Rizal’s novel, the main character examines the Philippines as an outsider
+                                while traveling in Europe. Hernandez’s novel also tackles the lead character’s search for Simoun’s
+                                treasure, acting as a continuation of Rizal’s El Filibusterismo. The novel portrays the conditions of the
+                                citizenry at the onset of industrialization brought forth by the Americans in the Philippines.</p>
+                            <li>What are your reactions to the content of the literary piece? Give your interpretation of it.</li>
+                            <p style="margin-left: 45px;margin-top: 1px;">The novel titled “Mga Ibong Mandaragit” was written by Amado V. Hernandez torepresent and
+                                address the long-standing plea of Filipino patriots for justice, freedom, and truthagainst maltreatment
+                                and unjust practices of so-called “Ibong Mandaragit” in Philippine society.The story depicted the
+                                lives of every Filipino facing many societal problems leading topatriotism, heroism, and
+                                humane actions when people in the community were subjected to powerand control by the upper
+                                classes. These people executed their divine mission by offeringthemselves to serve the people
+                                through Mando’s persona and his friend Karyo for the common good of Filipino.</p>
+
+                        </ol>
+                    </div><br><br><br><hr><hr><br>
+            </div>
+        </div>
+    </body>
+    <script>
+        // Get the button
+        let mybutton = document.getElementById("myBtn");
+        
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+        
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+        </script>    
+</html>

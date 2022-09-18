@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <title>Jose Garcia Villa</title>
+        <style>
+            body{
+                background-color: #345c72;
+                color: white;
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+            }
+            table {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                border-collapse: collapse;
+                width: 90%;
+                text-align: left;
+                position: relative;
+            }
+
+            .button4 {
+                background-color: white;
+                color: black;
+                border: 2px solid #555555;
+            }
+
+            .button4:hover {
+                background-color: rgb(91, 125, 230);
+                color: white;
+            }
+            .button {
+                background-color: royalblue;
+                border: none;
+                color: white;
+                padding:10px 25px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 25px;
+                font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+                transition-duration: 0.5s;
+                cursor: pointer;
+                border-radius: 25px 25px 25px 25px;
+                margin-bottom: -25px;
+                margin-left: 5px;
+                margin-top: 10px;
+                letter-spacing: 2px;
+            }
+            footer{
+                height: 0;
+            }
+            .main{
+                margin-left: 50px;
+                margin-right: 50px;
+                background-color: #2a2e30;
+                margin-top: 50px;
+            }
+            #cont{
+                margin-left: 50px;
+                margin-top: 25px;
+                margin-bottom: 50px;
+                margin-right: 50px;
+            }
+            #myBtn {
+  display: none;
+  position: fixed;
+  bottom: 45px;
+  right: 45px;
+  z-index: 99;
+  font-size: 25px;
+  border: none;
+  outline: none;
+  background-color: royalblue;
+  color: white;
+  cursor: pointer;
+  padding: 25px;
+  border-radius: 4px;
+}
+
+#myBtn:hover {
+  background-color: #1d1f20;
+}
+        </style></head>
+    <body>
+        <div class="main">
+            <a href="../authors.html"><button class="button button4" >Return</button></a>
+            <button onclick="topFunction()" id="myBtn" title="Go to top"><b>Top</b></button>
+            <br><br>
+            <div id="cont">
+
+            <table>
+                <tr>
+                    <td style="width: 400px;"><img style="border-radius: 50%;" src="data:image/jpeg;base64,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" width="350px" height="350px"></td>
+                    <td style="width: 1000px;"><h1 style="margin-bottom: -15px;" >Jose Garcia Villa</h1>
+                        <h3 style="font-style: italic;">conferred on 1973</h3>
+                        <b4>He used the pen name Doveglion (derived from "Dove, Eagle, Lion"), based on the characters he derived from his own works.<br>
+                            Born on August 5, 1908 in Manila <br>
+                            Died on February 7, 1997 at the age of 88 attributed from cerebral stroke and multilobar pneumonia, in New York<br>
+                            A filipino <em> poet, literary critic, short story writer, and painter.</em> He is known to have introduced the "reversed consonance rhyme scheme" in writing poetry, as well as the extensive use of punctuation marks—especially commas, which made him known as the Comma Poet.</b4></td>
+                  </tr>
+    
+              </table><br>
+            <p>He is known to have introduced the "reversed consonance rhyme scheme" in writing poetry, as well as the extensive use of punctuation marks—especially commas, which made him known as the Comma Poet.</p><hr>
+           <h2><em style="text-decoration: underline;">Biography</em></h2> 
+            <p>Jose Garcia Villa, born out of Simeon Villa a personal physician of Emilio Aguinaldo and guia Garcia in Singalong district of Manila. Villa enrolled on a Pre-Medical course in the University of the Philippines, but then switched to Pre-Law course. However, he realized that his true passion was in the arts.<br><br>
+                At the time, Villa's art poetry style was deemed too harsh. In 1929, he published Man Songs, a collection of sensual poems, in The Philippines Herald magazine supplement, which was deemed too daring by authorities at the University of the Philippines, and he was even penalized for obscenity by the Manila Court of First Instance. That same year, Villa received The Philippines Free Press magazine's Best Story of the Year award for Mir-I-Nisa. He was also awarded P1,000 in prize money, which he utilized to travel to the United States.<br><br>
+                He enrolled at the University of New Mexico and was a founding member of Clay, a mimeograph literary magazine. He earned a Bachelor of Arts degree and continued his education at Columbia University. Villa, one of the few Asians to do so at the time, had steadily gained the attention of the country's literary circles. Villa moved from writing prose to poetry after the publication of Footnote to Youth in 1933, and released only a few works until 1942. During the release of Have Come, Am Here in 1942, he established a new rhyming scheme known as "reversed consonance," in which "the last sounded consonants of the last syllable, or the last main consonant of a phrase, are reversed for the corresponding rhyme," according to Villa.<br><br>
+                Villa introduced a literary style he coined "comma poems" in 1949, in which commas are added after each word. "The commas are an intrinsic and important part of the medium: regulating the poem's verbal density and time movement: enabling each word to gain a richer tonal value, and the line movement to become more measured," he said in the preface to Volume Two.<br><br>
+                From 1949 to 1951, Villa worked as an associate editor for New Directions Publishing in New York City, and from 1952 to 1960, she was the director of the poetry workshop at City College of New York. He then stepped away from the literary scene to focus on teaching, first lecturing at The New School for Social Research from 1964 until 1973 and afterwards giving poetry classes at his apartment. Villa also served as a cultural attaché to the Philippine Mission to the United Nations from 1952 to 1963, and as a cultural adviser to the President of the Philippines beginning in 1968.<br><br>
+            </p>
+            <hr>
+
+
+            <!--achievments-->
+            <h2><em>Achievments and Awards</em></h2>
+            <ul>
+                <li><i>The American Academy of Arts and Letters Award</i> (1942)</li>
+                <li><i>Guggenheim Fellowship</i> (1942)</li>
+                <li><i>Bollingen Foundation Fellowship</i> (1951)</li>
+                <li><i>Bollingen Foundation Fellowship</i> (1952)</li>
+                <li><i>Shelley Memorial Award</i> (1958)</li>
+                <li><i>Philippines Pro Patria Award</i> (1961)</li>
+                <li><i>Philippines Cultural Heritage Award (1963)</i></li>
+                <li><i>Rockefeller Foundation Fellowship</i> (1963)</li>
+            </ul>
+<br>
+           <hr><br><center><h2><em>BIBLIOGRAPHY</em></h2><table width="100%">
+                <tr>
+                    <td>Poems in praise of love (1973)</td>
+                    <td>The Anchored Angel (1999)</td>
+                    <td>The Critical Villa: Essays in Literary Criticism (2002)</td>
+                </tr>
+                <tr>
+                    <td>Doveglion: Collected Poems (1941)</td>
+                    <td>Footnote to Youth: Tales of the Philippines and Others (1933)</td>
+                    <td>Many Voices (1939)</td>
+                </tr>
+                <tr>
+                    <td>Have Come, Am Here (1942)</td>
+                    <td>The Portable Villa</td>
+                    <td>The Essential Villa</td>
+                </tr>
+                <tr>
+                    <td>Selected Poems and New</td>
+                    <td>Appassionata: Poems in Praise of Love (1979)</td>
+                    <td>A Parliament of Giraffes</td>
+                </tr>
+                <tr>
+                    <td>The Anchored Angel: Selected Writings</td>
+                    <td>When I Was No Bigger Than A Huge</td>
+                    <td>he Emperor's New Sonnet</td>
+                </tr>
+
+            </table></center><br><hr>
+    
+    
+                <h1 style="text-align: center">Doveglion</h1>
+                <p style="text-align: center;">he isn’t looking at anything<br>
+                    he isn’t looking for something<br>
+                    he isn’t looking<br>
+                    he is seeing<br><br>
+                    what<br><br>
+                    not something outside himself<br>
+                    not anything inside himself<br>
+                    but himself<br><br>
+                    himself how<br><br>
+                    not as some anyone<br>
+                    not as any someone<br><br>
+                    only as a noone(who is everyone)</p></center>
+    <br><hr><br>
+    
+    
+    
+                    <h2 id="summary">Summary by: Francis Joe Penero</h2><img style="border-radius: 50%;" src="../penero.jpg" width="200px" height="200px">
+                    <div class="content" style="z-index: 1100px; margin-top: -250px;"><h1 style="text-align: center">Doveglion</h1>
+                        <ol type="a" style="margin-left: 250px;">
+                            <li>What is/are the theme/s of the literary piece?</li>
+                            <p style="margin-left: 45px;margin-top: 1px;">beauty, humanity, the individual self, and a visionary concept of literature that entailed an understanding of “Imagination” as a universal property.</p>
+                            <li>What/Who are the inspirations in writing the literary piece?</li>
+                            <p style="margin-left: 45px;margin-top: 1px;">Jose Garcia Villa (1908–1997) was a Filipino poet, writer, and critic. He used the pen name “Doveglion,” which was a combination of the words “dove,” “eagle,” and “lion” and was what he believed was his true persona.
+                            </p>
+                            <li>How did the literary piece contribute to the development of literature in the Philippines?</li>
+                            <p style="margin-left: 45px;margin-top: 1px;">Villa's strategic placement, coupled with his quirky yet impressive poetic talent, helped propel English Filipino literature out of the swamp of late 19th-century Romanticism and straight into the modern era. I was. But his own work, even at its most ascetic, always hints at the eccentric romanticism of the Thoroughbred. It is this tension between the sensual and the spiritual that characterizes his sensibility, a unique, strikingly lyrical and A. statement about the uncompromising literary landscape. B. Tone of conversation, attention to detail in everyday life, confession, discreet first lines. The outside world had little interest in the poet Villa - he was not read for "news".
+                            </p>
+                            <li>What are your reactions to the content of the literary piece? Give your interpretation of it.</li>
+                            <p style="margin-left: 45px;margin-top: 1px;">Defining José García Villa's poetry is never easy. He never wanted his work to become a hostage of prose and convention. It was Villa himself who said that the greatest poets were in constant rebellion against the historical period in which they existed. In this sense, his poetry became famous for its uncanny ability to alienate poetry and reality, and for his attitude towards society. Political and literary grain.
+                            </p>
+                    </div>
+                    <br><br><hr><hr><br>
+        </div>
+    </body>
+    <script>
+        // Get the button
+        let mybutton = document.getElementById("myBtn");
+        
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+            mybutton.style.display = "block";
+          } else {
+            mybutton.style.display = "none";
+          }
+        }
+        
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+          document.body.scrollTop = 0;
+          document.documentElement.scrollTop = 0;
+        }
+        </script>    
+</html>
